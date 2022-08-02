@@ -1,4 +1,8 @@
-#pragma once
+// Programming 2D Games
+// Copyright (c) 2011 by: 
+// Charles Kelly
+// Chapter 5 spacewar.h v1.0
+
 #ifndef _CONSTANTS_H
 #define _CONSTANTS_H
 #define WIN32_LEAN_AND_MEAN
@@ -31,6 +35,7 @@
 // graphic images
 const char NEBULA_IMAGE[] = "pictures\\orion.jpg";  // photo source NASA/courtesy of nasaimages.org 
 const char PLANET_IMAGE[] = "pictures\\planet.png"; // picture of planet
+const char SHIP_IMAGE[] = "pictures\\ship.png";   // spaceship
 
 // window
 const char CLASS_NAME[] = "Spacewar";
@@ -38,6 +43,13 @@ const char GAME_TITLE[] = "gotka's Game Engine";
 const bool FULLSCREEN = false;
 const UINT GAME_WIDTH = 640;
 const UINT GAME_HEIGHT = 480;
+
+const int  SHIP_START_FRAME = 0;            // starting frame of ship animation
+const int  SHIP_END_FRAME = 3;              // last frame of ship animation
+const float SHIP_ANIMATION_DELAY = 0.2f;    // time between frames of ship animation
+const int  SHIP_COLS = 2;                   // ship texture has 2 columns
+const int  SHIP_WIDTH = 32;                 // width of ship image
+const int  SHIP_HEIGHT = 32;                // height of ship image
 
 //game
 const double PI = 3.14159265;

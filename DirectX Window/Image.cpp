@@ -1,3 +1,8 @@
+// Programming 2D Games
+// Copyright (c) 2011 by: 
+// Charles Kelly
+// Image.cpp v1.0
+
 #include "Image.h"
 
 //=============================================================================
@@ -125,8 +130,8 @@ void Image::draw(SpriteData sd, COLOR_ARGB color)
 
 //=============================================================================
 // update
-// typically called once per frame
-// frameTime is used to regulate the speed of movement and animation
+// 일반적으로 프레임당 1번 호출
+// frameTime 은 이동이나 애니메이션의 속도를 조절하는 데 사용됨.
 //=============================================================================
 void Image::update(float frameTime)
 {
@@ -153,7 +158,7 @@ void Image::update(float frameTime)
 }
 
 //=============================================================================
-// Set the current frame of the image
+// 이미지의 현재 프레임 설정
 //=============================================================================
 void Image::setCurrentFrame(int c)
 {
@@ -166,16 +171,17 @@ void Image::setCurrentFrame(int c)
 }
 
 //=============================================================================
-//  Set spriteData.rect to draw currentFrame
+//  currentFrame에 그리게 spriteData.rect를 설정 
 //=============================================================================
 inline void Image::setRect()
 {
-	// configure spriteData.rect to draw currentFrame
+
 	spriteData.rect.left = (currentFrame % cols) * spriteData.width;
-	// right edge + 1
+	// 오른쪽 모서리 +1
 	spriteData.rect.right = spriteData.rect.left + spriteData.width;
+
 	spriteData.rect.top = (currentFrame / cols) * spriteData.height;
-	// bottom edge + 1
+	// 아래쪽 모서리 +1
 	spriteData.rect.bottom = spriteData.rect.top + spriteData.height;
 }
 
