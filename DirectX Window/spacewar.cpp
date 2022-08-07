@@ -62,6 +62,32 @@ void Spacewar::initialize(HWND hwnd)
 // 모든 게임 아이템을 갱신한다.
 void Spacewar::update()
 {
+	//방향키 입력
+	if (input->isKeyDown(SHIP_RIGHT_KEY))
+	{
+		ship.setX(ship.getX() + frameTime * SHIP_SPEED);
+		if (ship.getX() > GAME_WIDTH)
+			ship.setX((float)-ship.getWidth());			//좌표가 0이 아닌 이유는 자연스러운 움직임을 위해서
+	}
+	if (input->isKeyDown(SHIP_LEFT_KEY))
+	{
+		ship.setX(ship.getX() - frameTime * SHIP_SPEED);
+		if (ship.getX() < -ship.getWidth())
+			ship.setX((float)GAME_WIDTH);
+	}
+	if (input->isKeyDown(SHIP_UP_KEY))              
+	{
+		ship.setY(ship.getY() - frameTime * SHIP_SPEED);
+		if (ship.getY() < -ship.getHeight())        
+			ship.setY((float)GAME_HEIGHT);          
+	}
+	if (input->isKeyDown(SHIP_DOWN_KEY))
+	{
+		ship.setY(ship.getY() + frameTime * SHIP_SPEED);
+		if (ship.getY() > GAME_HEIGHT)
+			ship.setY((float)-ship.getHeight());
+	}
+	
 	ship.update(frameTime);
 }
 
